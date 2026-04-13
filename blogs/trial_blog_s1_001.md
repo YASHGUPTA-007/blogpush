@@ -20,7 +20,7 @@ tools:
   - Docker
 word_count: 0
 generated_at: "2026-04-13T00:00:00Z"
-status: "draft"
+status: "published"
 published_to: []
 ---
 
