@@ -33,7 +33,7 @@ published_to: []
 - Tensors are the core abstraction in PyTorch, and autograd is the engine that makes training possible.
 - If you understand computation graphs, debugging exploding loss and broken gradients becomes much easier.
 - You can go from notebook-level model code to a small production API in one clean pipeline.
-- A strong technical blog should no be stop at theory; it should include one complete build-and-deploy mini project.
+
 
 ---
 
