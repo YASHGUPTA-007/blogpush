@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "blogs/**"
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,4 +19,5 @@ jobs:
           FIREBASE_ADMIN_CLIENT_EMAIL: ${{ secrets.FIREBASE_ADMIN_CLIENT_EMAIL }}
           FIREBASE_ADMIN_PRIVATE_KEY: ${{ secrets.FIREBASE_ADMIN_PRIVATE_KEY }}
           AUTHOR_ID: ${{ secrets.AUTHOR_ID }}
+          AUTHOR_NAME: ${{ secrets.AUTHOR_NAME }} # <--- YE LINE ADD KI HAI
         run: npm run publish-blogs
