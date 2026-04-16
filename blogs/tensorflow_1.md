@@ -5,12 +5,12 @@ author: "Soham Sharma"
 category: "Technology"
 tags: ["TensorFlow", "Deep Learning", "Python", "Keras", "Machine Learning"]
 status: "published"
-featuredImage: ""
+featuredImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80"
 ---
 
 TensorFlow 1.x made you build a static computation graph first, then feed data through it in a session. It was fast but painful — you couldn't use Python debuggers, intermediate values were invisible, and errors surfaced at runtime with cryptic messages. TensorFlow 2.x flipped this: execution is eager by default, code runs immediately like normal Python. But there's a catch. When you need performance, you reach for `tf.function`, and suddenly you're dealing with tracing, retracing, and the AutoGraph compiler. Understanding when you're in eager mode vs. graph mode is the single most important mental model for working productively with TF2.
 
-![TensorFlow 2.x architecture showing eager vs graph execution](https://www.tensorflow.org/images/tf_logo_social.png)
+![Glowing neural network visualization with connected layers on dark background](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80)
 
 ## Eager Execution: The Default Mode
 
@@ -225,7 +225,7 @@ increment_correct()  # "Counter is now: 1"
 increment_correct()  # "Counter is now: 2"
 ```
 
-![TensorFlow function tracing and graph compilation process](https://www.tensorflow.org/guide/images/intro_to_graphs/two_types_of_functions.png)
+![Abstract representation of a compiled computation graph with branching nodes](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&auto=format&fit=crop&q=80)
 
 ## Variables: State in Graphs
 

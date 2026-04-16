@@ -5,12 +5,12 @@ author: "Soham Sharma"
 category: "AI"
 tags: ["GPT-4o", "Multimodal", "OpenAI", "LLM", "GenAI"]
 status: "published"
-featuredImage: ""
+featuredImage: "https://images.unsplash.com/photo-1686191128892-3b37add4c844?w=1200&auto=format&fit=crop&q=80"
 ---
 
 GPT-4o ("omni") unified text, image, and audio in a single model endpoint. The marketing narrative was about natural conversation with emotional voice responses. The engineering reality is more interesting: a production API that handles vision, structured JSON extraction from images, and document understanding at latencies and costs that make real applications viable. This post is the pragmatic developer's guide — what you can build today, where the model actually struggles, and what the benchmarks don't tell you.
 
-![GPT-4o multimodal capabilities overview](https://openai.com/favicon.ico)
+![Futuristic AI interface showing multimodal input streams on a holographic display](https://images.unsplash.com/photo-1686191128892-3b37add4c844?w=1200&auto=format&fit=crop&q=80)
 
 ## What GPT-4o Actually Exposes via API
 
@@ -327,4 +327,4 @@ The voice API is excellent for demos and consumer apps but introduces platform c
 
 Start with document extraction if you have unstructured document workflows — it's the most reliable, best-understood use case, and the economics are favorable.
 
-![GPT-4o multimodal pipeline for document processing](https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&auto=format&fit=crop)
+![Person interacting with an AI assistant on a laptop with glowing UI elements](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop&q=80)

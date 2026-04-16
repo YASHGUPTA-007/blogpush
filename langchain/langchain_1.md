@@ -5,12 +5,12 @@ author: "Soham Sharma"
 category: "Technology"
 tags: ["LangChain", "LLM", "Python", "AI Agents", "RAG"]
 status: "published"
-featuredImage: ""
+featuredImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&auto=format&fit=crop&q=80"
 ---
 
 LangChain's API has changed dramatically. If you learned it from a tutorial written before mid-2023, much of what you know maps to a deprecated interface. The new model — built around **LangChain Expression Language (LCEL)** and the `Runnable` protocol — is not just syntactic sugar. It's a fundamentally different composition model that enables streaming, async execution, and observability without bolted-on workarounds. This post maps the old mental model to the new one and shows you what to actually use today.
 
-![LangChain architecture diagram showing chain composition](https://python.langchain.com/img/langchain_stack.png)
+![Abstract glowing network of connected nodes representing AI chain architecture](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80)
 
 ## The Old Model: Chains as Class Hierarchies
 
@@ -201,7 +201,7 @@ result_creative = chain.with_config(
 
 This is useful when you want a single chain definition but need to vary behavior per request — for example, deterministic output for structured extraction and creative output for text generation.
 
-![LangChain LCEL pipeline showing data flow between components](https://python.langchain.com/assets/images/langchain_stack_062024-9b7bbc1e3c51b7ae8a2cd68a6f3bfd49.jpg)
+![Blue glowing data pipeline flowing between server nodes in a dark environment](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80)
 
 ## Inspecting the Chain: The Introspection API
 

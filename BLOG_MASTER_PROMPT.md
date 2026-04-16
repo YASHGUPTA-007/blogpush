@@ -36,8 +36,11 @@ Field rules:
                 examples: "AI", "Automation", "Tutorials", "News".
 - tags         (array of strings, REQUIRED) — 2–6 tags. YAML array syntax: ["A", "B"].
 - status       (string, REQUIRED) — Use "published" to make it live, "draft" to hide it.
-- featuredImage (string, OPTIONAL) — Leave as empty string "". Featured images are
-                managed through the admin UI, not via this file.
+- featuredImage (string, REQUIRED) — A real, working Unsplash image URL relevant to
+                the post topic. Use this format:
+                https://images.unsplash.com/photo-XXXXXXXXXXXXXXXX?w=1200&auto=format&fit=crop&q=80
+                Pick a photo ID that is clearly relevant (code, AI, neural networks, research, etc.).
+                Do NOT leave this empty. Do NOT use placeholder or made-up URLs.
 
 The slug is AUTO-GENERATED from the title (lowercased, spaces → hyphens, special
 characters stripped). Do NOT add a slug field — it will be ignored.
@@ -91,6 +94,10 @@ Use ONLY standard Markdown image syntax:
 - Do NOT add width/height attributes, style attributes, or class names — the CSS
   handles all sizing (width: 100%, border-radius: 0.75rem, box-shadow).
 - Inline images (inside a sentence) are not supported — always use block images.
+- Use ONLY Unsplash URLs for body images. Format:
+  https://images.unsplash.com/photo-XXXXXXXXXXXXXXXX?w=1200&auto=format&fit=crop&q=80
+  Every post must have a minimum of 2 body images. Do NOT use logos, GitHub raw
+  assets, or documentation site images — they are frequently moved or blocked.
 
 ══════════════════════════════════════════════
 RULE #4 — CODE BLOCKS & INLINE CODE

@@ -5,12 +5,12 @@ author: "Soham Sharma"
 category: "AI"
 tags: ["Research", "Attention", "Transformers", "PyTorch", "LLMs"]
 status: "published"
-featuredImage: ""
+featuredImage: "https://images.unsplash.com/photo-1532094349884-543559b27a3d?w=1200&auto=format&fit=crop&q=80"
 ---
 
 Standard attention is memory-bound, not compute-bound. The naive implementation materializes an N×N attention matrix in GPU High Bandwidth Memory (HBM), and for long sequences that memory traffic dominates total runtime — not the actual floating-point operations. Flash Attention 2 eliminates most of that HBM traffic through a tiled computation strategy, delivering exact (not approximate) attention at 2-4× the speed of the standard implementation. Understanding the mechanics gives you the foundation to reason about why sequence length is a first-class concern in LLM design.
 
-![Flash Attention 2 tiling strategy showing reduced HBM access](https://raw.githubusercontent.com/Dao-AILab/flash-attention/main/assets/flashattn_banner.jpg)
+![Researcher working with data visualizations on large monitors in a dark lab](https://images.unsplash.com/photo-1532094349884-543559b27a3d?w=1200&auto=format&fit=crop&q=80)
 
 ## The Memory Problem with Naive Attention
 
@@ -261,7 +261,7 @@ A100 SRAM: ~20 MB — can hold many tiles simultaneously
 
 The key insight: as N grows from 1K to 64K tokens, standard attention memory grows 4096×, while Flash Attention memory stays constant (proportional to d and B, not N).
 
-![Memory scaling comparison between Flash Attention and standard attention](https://raw.githubusercontent.com/Dao-AILab/flash-attention/main/assets/figs/flashattn_memory.png)
+![Abstract visualization of memory blocks and computation tiles on GPU hardware](https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80)
 
 ## Practical Considerations
 
