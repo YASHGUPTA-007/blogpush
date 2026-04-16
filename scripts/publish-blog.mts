@@ -51,7 +51,7 @@ async function publishBlogs() {
       excerpt: data.excerpt || "",
       
       // Author Logic: Markdown > GitHub Secret > Fallback
-      author: data.author || process.env.AUTHOR_NAME || "Botmartz Team",
+      authorName: data.authorName || data.author || process.env.AUTHOR_NAME || "Botmartz Team",
       authorId: data.authorId || process.env.AUTHOR_ID || "",
       authorPhotoURL: data.authorPhotoURL || "", // Optional in frontmatter
       
@@ -84,10 +84,10 @@ async function publishBlogs() {
         likes: 0,
         views: 0,
       });
-      console.log(`✅ Created: ${data.title} by ${payload.author}`);
+      console.log(`✅ Created: ${data.title} by ${payload.authorName}`);
     } else {
       await existing.docs[0].ref.update(payload);
-      console.log(`🔄 Updated: ${data.title} by ${payload.author}`);
+      console.log(`🔄 Updated: ${data.title} by ${payload.authorName}`);
     }
   }
   console.log("Process Completed Successfully.");

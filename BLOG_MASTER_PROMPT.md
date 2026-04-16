@@ -100,7 +100,7 @@ Use ONLY standard Markdown image syntax:
   assets, or documentation site images — they are frequently moved or blocked.
 
 ══════════════════════════════════════════════
-RULE #4 — CODE BLOCKS & INLINE CODE
+RULE #4 — CODE BLOCKS, OUTPUTS & INLINE CODE
 ══════════════════════════════════════════════
 Fenced code blocks (use the language identifier for syntax highlighting):
 
@@ -116,6 +116,37 @@ Fenced code blocks (use the language identifier for syntax highlighting):
   ```bash
   npm install && npm run dev
   ```
+
+### MANDATORY: Output blocks after every runnable code snippet
+
+Every code block that produces any output (print statements, return values,
+error messages, shell output, logs) MUST be immediately followed by an
+**Output:** label and a ```text block showing the exact output:
+
+  **Output:**
+  ```text
+  Hello, world!
+  ```
+
+Rules for output blocks:
+- Place them directly after the closing ``` of the code block, with no blank
+  line in between — the label and output block flow as a single unit.
+- Show the EXACT output a reader would see if they ran the code, including
+  tensor shapes, dtypes, formatting, and whitespace.
+- For outputs that vary by machine (e.g., benchmark timings, random values,
+  GPU memory), show a realistic representative value and add a one-line
+  blockquote note immediately after the output block:
+    > Note: Exact values vary by hardware/random seed.
+- If a code block defines a function/class but has no direct output, skip the
+  output block — do NOT add an empty one.
+- If a code block intentionally shows an error or warning, include that in the
+  output block and label it clearly:
+    **Output (raises):**
+    ```text
+    ValueError: incompatible shapes ...
+    ```
+- Never fabricate outputs. If you are uncertain of the exact output, reason
+  through the code step-by-step to derive it, or add the hardware/seed note.
 
 Inline code: use single backticks for file names, variables, commands, or short
 snippets: `npm run build`, `status: "published"`, `index.ts`.
@@ -141,12 +172,36 @@ External links are fine. Do not use bare URLs.
 ══════════════════════════════════════════════
 RULE #7 — CONTENT QUALITY GUIDELINES
 ══════════════════════════════════════════════
-- Target length: 800–2000 words for the body (excluding frontmatter).
+- Target length: 1500–3000 words for the body (excluding frontmatter and output
+  blocks). Technical depth takes priority over hitting a word count — go longer
+  if the topic demands it.
 - Write in clear, modern, slightly editorial English. The site's brand voice is
   knowledgeable but approachable.
 - Avoid filler phrases like "In conclusion, ..." or "As we can see...".
 - End with a strong closing paragraph or a practical call-to-action.
 - Do not hallucinate external URLs. If you link to something, be certain it exists.
+
+### MANDATORY: Detailed explanations
+
+Every non-trivial concept, code block, and output MUST be explained in prose.
+Do not let code speak for itself — readers of all experience levels visit this
+blog. Specifically:
+
+- Before each code block: briefly explain WHAT the code is about to demonstrate
+  and WHY it matters (1–3 sentences).
+- After each output block: explain WHAT the output means and WHY it looks the
+  way it does. Point out any non-obvious details (e.g. dtype, shape, byte
+  strings, timing differences).
+- For multi-step processes (training loops, pipelines, transformations): walk
+  through each step explicitly. Do not compress multiple concepts into a single
+  paragraph with no supporting detail.
+- Use concrete numbers and comparisons: instead of "this is faster", say
+  "~6× faster in this benchmark because the Python interpreter is bypassed
+  after the first trace".
+- When a concept has a common gotcha or pitfall, dedicate a short ### sub-section
+  or a blockquote callout to it — do not bury warnings in parentheses.
+- Analogies are encouraged for abstract concepts (graphs, tracing, symbolic
+  tensors), but keep them accurate and brief.
 
 ══════════════════════════════════════════════
 NOW WRITE THE BLOG POST ABOUT THE FOLLOWING TOPIC:

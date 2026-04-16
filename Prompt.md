@@ -4,7 +4,7 @@ Master Prompt — AI/ML Series (Enhanced Edition)
 5 Categories
 20 Posts each
 100 Total files
-2–3K Words per post
+2.5–4K Words per post (including code + output blocks + detailed explanations)
 Categories: pytorch · langchain · tensorflow · research · genai-news
 blog.botmartz.com · author: Soham Sharma
 
@@ -30,7 +30,8 @@ SYSTEM RULES
 Content Standards
 Every one of the 100 posts must conform to these rules without exception.
 ■ Word Count
-2,000–3,000 words per post including code blocks. No padding, no filler.
+2,500–4,000 words per post including code blocks, output blocks, and detailed
+explanations. No padding, no filler — depth is earned through substance.
 ■ Images
 Minimum 2 real image URLs per post using standard Markdown image syntax. Use reputable sources: official documentation, GitHub repos, academic papers, or established ML blogs.
 ■ Author
@@ -48,8 +49,36 @@ Start with the problem or use case immediately. Examples:
 All code must be complete and runnable
 Include imports at the top
 Add brief inline comments for complex logic
-Show actual output where relevant
 Use realistic variable names (not foo, bar)
+
+■ Output Blocks (MANDATORY — refer to BLOG_MASTER_PROMPT.md Rule #4 for full spec)
+Every code block that produces output MUST be followed immediately by:
+
+  **Output:**
+  ```text
+  <exact output here>
+  ```
+
+Rules:
+- Show the exact output the reader would see, including tensor shapes, dtypes,
+  log lines, and whitespace.
+- For non-deterministic output (timings, random values), show a realistic value
+  and add a one-line blockquote: > Note: values vary by hardware/random seed.
+- Pure definition blocks (class/function with no calls) do NOT need an output block.
+- Error-demonstrating blocks: label as **Output (raises):** and show the traceback.
+
+■ Detailed Explanations (MANDATORY)
+Before each code block: 1–3 sentences explaining what the code is about to show
+and why it matters.
+After each output block: explain what the output means and why it looks that way.
+Point out non-obvious details (e.g. byte strings in TF, dtype promotions, timing
+ratios).
+For multi-step concepts: walk through every step — do not compress multiple ideas
+into one dense paragraph.
+Use concrete numbers and comparisons: "~6× faster because Python is bypassed after
+the first trace" beats "this is faster".
+Gotchas and pitfalls: give them a dedicated ### sub-section or a blockquote
+callout. Never bury warnings in parentheses.
 ■ Research Posts
 Add a Paper Reference section at the end with:
 arXiv link
@@ -214,10 +243,15 @@ Do NOT stop, summarize, or ask for confirmation — generate every single file
 Adopt the expert technical writer persona for every post
 Quality Checklist Per Post:
 ✅ Starts with a hook (problem/use case, not meta-commentary)
-✅ Contains working, complete code examples
-✅ Includes concrete numbers, benchmarks, or comparisons where relevant
+✅ Contains working, complete code examples with imports
+✅ Every runnable code block has an **Output:** block with exact output
+✅ Non-deterministic outputs include a hardware/seed note
+✅ Before each code block: context sentence(s) explaining what & why
+✅ After each output block: explanation of what the output means
+✅ Gotchas and pitfalls get a dedicated sub-section or callout
+✅ Concrete numbers and comparisons (not vague "this is faster")
 ✅ Explains "why" not just "how"
 ✅ Acknowledges limitations and tradeoffs
-✅ 2,000-3,000 words (including code)
-✅ Minimum 2 real image URLs
+✅ 2,500–4,000 words (including code + outputs + explanations)
+✅ Minimum 2 real Unsplash image URLs
 ✅ Proper frontmatter with author: "Soham Sharma"
