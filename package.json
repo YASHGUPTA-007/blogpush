@@ -4,7 +4,9 @@
   "description": "Automated Markdown to Firestore Publisher",
   "type": "module",
   "scripts": {
-   "publish-blogs": "tsx scripts/publish-blog.mts"
+    "publish-blogs": "tsx scripts/publish-blog.mts",
+    "generate-colab": "tsx scripts/generate-colab.mts",
+    "inject-colab": "tsx scripts/inject-colab-link.mts"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

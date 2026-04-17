@@ -1,0 +1,85 @@
+name: Generate Colab Notebooks & Publish Blogs
+
+on:
+  push:
+    paths:
+      - "pytorch/**/*.md"
+      - "langchain/**/*.md"
+      - "tensorflow/**/*.md"
+      - "research/**/*.md"
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get changed markdown files
+        id: changed
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD -- '*.md' | grep -E '^(pytorch|langchain|tensorflow|research|genai-news)/' || true)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Generate notebooks and inject Colab links
+        env:
+          GITHUB_REPO_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
+        run: |
+          while IFS= read -r MD_FILE; do
+            [ -z "$MD_FILE" ] && continue
+            [ ! -f "$MD_FILE" ] && continue
+
+            # Derive category and filename
+            CATEGORY=$(echo "$MD_FILE" | cut -d'/' -f1)
+            BASENAME=$(basename "$MD_FILE" .md)
+            NOTEBOOK_PATH="notebooks/${CATEGORY}/${BASENAME}.ipynb"
+
+            echo "Processing: $MD_FILE → $NOTEBOOK_PATH"
+
+            # Generate .ipynb
+            BLOG_URL="https://blog.botmartz.com/${BASENAME}"
+            npx tsx scripts/generate-colab.mts "$MD_FILE" "$BLOG_URL" "$NOTEBOOK_PATH"
+
+            # Build Colab URL (points to this same repo)
+            COLAB_URL="https://colab.research.google.com/github/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/blob/${GITHUB_BRANCH}/${NOTEBOOK_PATH}"
+
+            # Inject badge into the markdown
+            npx tsx scripts/inject-colab-link.mts "$MD_FILE" "$COLAB_URL"
+
+            # Copy updated .md to blogs/ for publish script
+            mkdir -p blogs
+            cp "$MD_FILE" "blogs/${BASENAME}.md"
+
+          done <<< "${{ steps.changed.outputs.files }}"
+
+      - name: Commit notebooks and updated markdown
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notebooks/ blogs/
+          git diff --cached --quiet || git commit -m "chore: add Colab notebooks and inject badges [skip ci]"
+          git push
+
+      - name: Publish blogs to Firestore
+        env:
+          FIREBASE_ADMIN_PROJECT_ID: ${{ secrets.FIREBASE_ADMIN_PROJECT_ID }}
+          FIREBASE_ADMIN_CLIENT_EMAIL: ${{ secrets.FIREBASE_ADMIN_CLIENT_EMAIL }}
+          FIREBASE_ADMIN_PRIVATE_KEY: ${{ secrets.FIREBASE_ADMIN_PRIVATE_KEY }}
+          AUTHOR_NAME: "Soham Sharma"
+          AUTHOR_ID: ${{ secrets.AUTHOR_ID }}
+        run: npm run publish-blogs

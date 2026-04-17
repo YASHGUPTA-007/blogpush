@@ -16,3 +16,10 @@ yarn-error.log*
 .vscode/
 .idea/
 .DS_Store
+
+# Blog source folders (managed externally)
+pytorch/
+langchain/
+tensorflow/
+research/
+
