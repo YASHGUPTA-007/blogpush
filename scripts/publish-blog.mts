@@ -67,6 +67,9 @@ async function publishBlogs() {
       day: data.day || null,
       tools: data.tools || [],
       
+      // Colab notebook link
+      colab_notebook: data.colab_notebook || "",
+
       // Image Handling
       featuredImage: data.featuredImage || "",
       featuredImageAlt: data.featuredImageAlt || data.title,

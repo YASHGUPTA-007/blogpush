@@ -1,20 +1,37 @@
 ---
-title: "TensorFlow 2.x Architecture: Eager Execution, tf.function, AutoGraph, and Graphs"
-excerpt: "TensorFlow 2.x made eager execution the default, but tf.function and AutoGraph still power production deployments. Understand when and how graphs take over."
-author: "Soham Sharma"
-category: "AI"
-tags: ["TensorFlow", "tf.function", "AutoGraph", "Deep Learning", "Python"]
-status: "published"
-featuredImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&auto=format&fit=crop&q=80"
-colab_notebook: ""
-series_id: "tensorflow-mlflow"
-series_slug: "tensorflow-mlflow"
-series_title: "TensorFlow + MLflow — From Experiments to Production"
-difficulty: "beginner"
+title: >-
+  TensorFlow 2.x Architecture: Eager Execution, tf.function, AutoGraph, and
+  Graphs
+excerpt: >-
+  TensorFlow 2.x made eager execution the default, but tf.function and AutoGraph
+  still power production deployments. Understand when and how graphs take over.
+author: Soham Sharma
+authorName: Soham Sharma
+category: AI
+tags:
+  - TensorFlow
+  - tf.function
+  - AutoGraph
+  - Deep Learning
+  - Python
+status: published
+featuredImage: >-
+  https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&auto=format&fit=crop&q=80
+colab_notebook: >-
+  https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_1.ipynb
+series_id: tensorflow-mlflow
+series_slug: tensorflow-mlflow
+series_title: TensorFlow + MLflow — From Experiments to Production
+difficulty: beginner
 week: null
 day: 3
-tools: ["TensorFlow", "Python"]
+tools:
+  - TensorFlow
+  - Python
 ---
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_1.ipynb)
+
 
 TensorFlow 1.x was notoriously hard to debug. You built a static computation graph, compiled it, then ran it in a `Session` — and if something went wrong, you got a cryptic error with no Python stack trace pointing to your actual code. TensorFlow 2.x fixed this by making eager execution the default. But here's the part most tutorials skip: eager execution is for development. In production, `tf.function` re-introduces the static graph — and understanding how that transition works is what separates a model that runs correctly from one that produces subtle bugs at deploy time.
 

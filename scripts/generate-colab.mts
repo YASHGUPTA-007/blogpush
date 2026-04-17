@@ -34,8 +34,9 @@ export function generateNotebook(mdFilePath: string, blogUrl: string): object {
   const { data, content } = matter(raw);
 
   const title = data.title || path.basename(mdFilePath, ".md");
-  const category = (data.category || "").toLowerCase().replace(/\s+/g, "-");
-  const installCmd = INSTALL_MAP[category] ?? "";
+  // Use directory name (pytorch/langchain/etc.) not frontmatter category ("AI")
+  const dirName = path.basename(path.dirname(path.resolve(mdFilePath)));
+  const installCmd = INSTALL_MAP[dirName] ?? "";
 
   const cells: object[] = [];
 

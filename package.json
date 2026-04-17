@@ -6,7 +6,8 @@
   "scripts": {
     "publish-blogs": "tsx scripts/publish-blog.mts",
     "generate-colab": "tsx scripts/generate-colab.mts",
-    "inject-colab": "tsx scripts/inject-colab-link.mts"
+    "inject-colab": "tsx scripts/inject-colab-link.mts",
+    "setup-colabs": "tsx scripts/run-local-colab-setup.mts"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
