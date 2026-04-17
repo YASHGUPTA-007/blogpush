@@ -8,7 +8,7 @@ excerpt: >-
   build and query both correctly.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: LangChain
 tags:
   - LangChain
   - Embeddings
@@ -34,7 +34,9 @@ tools:
   - Chroma
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_5.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_5.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Keyword search fails on semantics. "How do neural networks learn?" won't match a document that says "Gradient descent minimizes the loss function by iteratively updating parameters." A vector store fixes this by converting both query and document into dense vectors where semantic similarity equals geometric proximity. Retrieve the closest vectors and you retrieve semantically relevant content — even without any word overlap. This post builds a complete embedding and retrieval pipeline from raw text to similarity search.

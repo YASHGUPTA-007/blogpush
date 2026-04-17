@@ -7,7 +7,7 @@ excerpt: >-
   LLM pipeline. Build them wrong and your chain breaks on every edge case.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: LangChain
 tags:
   - LangChain
   - Prompt Engineering
@@ -31,7 +31,9 @@ tools:
   - OpenAI
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_2.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_2.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 An LLM call without a properly structured prompt is a function with no contract. You get output, but you can't guarantee its format, and your parser will fail on inputs you didn't test. LangChain's prompt templates and output parsers are the tooling that turns "call an LLM" into "call an LLM and get back a typed Python object." This post covers both ends of the pipe.

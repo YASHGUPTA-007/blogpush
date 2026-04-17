@@ -6,7 +6,7 @@ excerpt: >-
   inference with no quality loss — zero extra parameters.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: Research
 tags:
   - ALiBi
   - Positional Encoding
@@ -28,7 +28,9 @@ tools:
   - PyTorch
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_4.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_4.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 The original Transformer added sinusoidal position signals to token embeddings before the first attention layer. RoPE rotated query and key vectors. Both approaches share a fundamental limitation: they encode position information in the embedding space, and the model must learn to interpret those signals during training. This means the model has never seen — and has not learned to handle — position encodings beyond the training length.

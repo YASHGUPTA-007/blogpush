@@ -8,7 +8,7 @@ excerpt: >-
   prevents gradient leaks.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: PyTorch
 tags:
   - PyTorch
   - Autograd
@@ -30,7 +30,9 @@ tools:
   - PyTorch
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_2.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_2.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Every time you call `loss.backward()`, PyTorch traverses a graph of operations you built during the forward pass and computes gradients using the chain rule. Most engineers treat this as a black box and wonder why `backward()` fails with "graph freed", why gradients are `None`, or why memory grows during training. These bugs disappear once you understand the computation graph. This post builds that understanding from the ground up.

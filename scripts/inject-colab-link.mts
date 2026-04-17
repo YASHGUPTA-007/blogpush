@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-const BADGE_PREFIX = "[![Open In Colab]";
+const BADGE_PREFIX = "colab-badge.svg";
 
 export function injectColabLink(mdFilePath: string, colabUrl: string): void {
   let content = fs.readFileSync(mdFilePath, "utf-8");
@@ -11,7 +11,7 @@ export function injectColabLink(mdFilePath: string, colabUrl: string): void {
     return;
   }
 
-  const badge = `[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](${colabUrl})`;
+  const badge = `<a href="${colabUrl}" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>`;
 
   // Insert after closing frontmatter ---
   const frontmatterEnd = content.indexOf("---", 3);

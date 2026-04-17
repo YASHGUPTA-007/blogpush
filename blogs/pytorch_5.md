@@ -8,7 +8,7 @@ excerpt: >-
   accuracy.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: PyTorch
 tags:
   - PyTorch
   - CNN
@@ -31,7 +31,9 @@ tools:
   - torchvision
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_5.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_5.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Dense layers don't understand spatial structure. A 32×32 image fed into a Linear layer becomes 3072 independent numbers — the network has no way to learn that a pixel and its neighbor likely share meaning. Convolutional layers fix this: they apply the same learned filter across every spatial position, building translation-invariant feature detectors that compose from edges to textures to object parts. This post builds a complete CNN for CIFAR-10 from first principles and explains every architectural decision.

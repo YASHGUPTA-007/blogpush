@@ -8,7 +8,7 @@ excerpt: >-
   and a working implementation.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: Research
 tags:
   - Flash Attention
   - Transformers
@@ -31,7 +31,9 @@ tools:
   - Transformers
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_1.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_1.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Standard attention is memory-bound, not compute-bound. On a modern A100 GPU, the tensor cores can do matrix multiplications far faster than HBM (High-Bandwidth Memory) can supply data. The attention operation — computing `softmax(QK^T / sqrt(d)) * V` — materializes an N×N attention matrix in HBM, reads it back, then writes V-weighted sums. For N=4096, that's 128MB of intermediate data per attention head per forward pass, read and written multiple times. Flash Attention 2 eliminates these intermediate reads and writes by fusing the entire attention computation into a single kernel, using SRAM (shared memory, on-chip, ~100× faster than HBM) as a scratchpad.

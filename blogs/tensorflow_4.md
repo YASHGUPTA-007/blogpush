@@ -8,7 +8,7 @@ excerpt: >-
   and preprocessing is essentially free.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: TensorFlow
 tags:
   - TensorFlow
   - tf.data
@@ -30,7 +30,9 @@ tools:
   - TensorFlow
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_4.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_4.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 A poorly ordered `tf.data` pipeline is one of the most common causes of slow training — not slow model convergence, but actual wall-clock throughput degradation. Engineers profile their model, see 40% GPU utilization, and assume the bottleneck is in the forward pass. It's almost always the data pipeline. The `tf.data` API gives you five core operations and their composition order determines whether preprocessing is free (pipelined with GPU training) or blocking (the GPU waits). This post covers the canonical correct ordering and explains why each position matters.

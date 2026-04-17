@@ -8,7 +8,7 @@ excerpt: >-
   zero parameters — here's the math.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: Research
 tags:
   - RoPE
   - Positional Embeddings
@@ -31,7 +31,9 @@ tools:
   - Transformers
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_2.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_2.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 The original Transformer had no built-in notion of position. Two sentences with the same words in different orders would produce identical attention outputs. Absolute positional embeddings (the `PE(pos, dim)` table in "Attention Is All You Need") fixed this by adding a position-dependent vector to each token's embedding before the first attention layer. But that approach has a fundamental problem: positions seen during training can't generalize beyond the training length. Model trained on 2048 tokens? Give it position 4096 and you're feeding it embeddings it has never seen.

@@ -6,7 +6,7 @@ excerpt: >-
   Subclassing gives you full control when you need it.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: TensorFlow
 tags:
   - TensorFlow
   - Keras
@@ -29,7 +29,9 @@ tools:
   - Keras
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_2.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_2.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Keras has three different ways to define a model. Tutorials start with `Sequential` because it's simple, but then you hit a case where you need two inputs, a skip connection, or a custom training step — and suddenly you need to rewrite everything. Knowing upfront when each API is the right tool saves that rewrite.

@@ -8,7 +8,7 @@ excerpt: >-
   eliminate training bottlenecks.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: PyTorch
 tags:
   - PyTorch
   - DataLoader
@@ -30,7 +30,9 @@ tools:
   - PyTorch
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_3.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_3.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 GPU utilization dropping to 30% during training is almost always a data loading bottleneck. The model is done processing a batch and waiting for the next one — the CPU isn't keeping up. PyTorch's `DataLoader` with `num_workers > 0` is the fix, but only if your `Dataset` is correctly implemented. This post walks through building a production-ready data pipeline: writing a correct `Dataset`, handling variable-length inputs with `collate_fn`, and tuning `num_workers` without introducing bugs.

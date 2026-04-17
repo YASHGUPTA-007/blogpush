@@ -8,7 +8,7 @@ excerpt: >-
   logic.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: LangChain
 tags:
   - LangChain
   - OpenAI
@@ -34,7 +34,9 @@ tools:
   - Ollama
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_3.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_3.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 The most underrated feature of LangChain is model portability. You build a chain against the `ChatOpenAI` interface, and switching to Claude or a locally-hosted Llama model is a single-line change. This works because every LLM in LangChain implements the same `Runnable` protocol with identical `.invoke()`, `.stream()`, and `.batch()` methods. Understanding how each provider is wired up — including their differences in parameter names and token counting — is what makes that portability practical rather than aspirational.

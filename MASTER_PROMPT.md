@@ -45,7 +45,11 @@ Field rules:
 - title         (string, REQUIRED) — Title case. Do NOT use an H1 in the body.
 - excerpt       (string, REQUIRED) — Plain text only, no markdown. Max ~160 chars.
 - author        (string, REQUIRED) — ALWAYS "Soham Sharma". No exceptions.
-- category      (string, REQUIRED) — Single value: "Technology", "AI", "Tutorials", "News", "Automation".
+- category      (string, REQUIRED) — Must match the folder/series:
+                  pytorch/ → "PyTorch"
+                  langchain/ → "LangChain"
+                  tensorflow/ → "TensorFlow"
+                  research/ → "Research"
 - tags          (array, REQUIRED) — 2–6 tags. YAML array syntax: ["A", "B"].
 - status        (string, REQUIRED) — "published" to go live, "draft" to hide.
 - featuredImage (string, REQUIRED) — Real Unsplash URL. Never empty, never placeholder.

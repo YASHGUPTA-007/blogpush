@@ -8,7 +8,7 @@ excerpt: >-
   fit longer contexts on limited GPU memory.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: Research
 tags:
   - GQA
   - Attention
@@ -32,7 +32,9 @@ tools:
   - Transformers
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_3.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_3.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 During autoregressive inference, a transformer maintains a **KV cache** — the key and value tensors for every past token, for every attention head, for every layer. This cache is what allows the model to generate token N without recomputing attention over all N-1 previous tokens. The memory cost is significant: for Llama 2 70B with 64 heads, head dim 128, in float16, one token adds `2 × 64 × 128 × 2 bytes × 80 layers = 2.62 MB` per token to the cache. For a 4096-token context, that's 10.7 GB — just for the KV cache.

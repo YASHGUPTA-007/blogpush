@@ -8,7 +8,7 @@ excerpt: >-
   encoder-decoder architectures that Sequential can't express.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: TensorFlow
 tags:
   - TensorFlow
   - Keras
@@ -31,7 +31,9 @@ tools:
   - Keras
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_5.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_5.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 The Sequential API is a single-file road. Functional API is a road network: branches, merges, U-turns, and shared stretches. Once you understand that `tf.keras.Input` creates a symbolic tensor and every layer call returns a new symbolic tensor, the entire architecture space opens up. This post builds three architectures that require the Functional API: a multi-task classifier, a Siamese network with shared weights, and a multi-scale feature encoder.

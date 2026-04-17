@@ -7,7 +7,7 @@ excerpt: >-
   runnables, and LCEL so you build on the current API — not the deprecated one.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: LangChain
 tags:
   - LangChain
   - LLM
@@ -30,7 +30,9 @@ tools:
   - OpenAI
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_1.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_1.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Most LangChain tutorials on the internet are outdated. They teach `LLMChain`, `SequentialChain`, and `ConversationChain` — classes that still exist but are officially deprecated in favor of a completely different paradigm called **LangChain Expression Language (LCEL)**. If you're building something that will run in production next year, you need to understand the current architecture. This post gives you that foundation.

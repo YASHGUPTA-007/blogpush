@@ -8,7 +8,7 @@ excerpt: >-
   eval and memory leaks. This post covers every step.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: PyTorch
 tags:
   - PyTorch
   - Training Loop
@@ -30,7 +30,9 @@ tools:
   - PyTorch
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_4.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_4.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 The PyTorch training loop looks simple: forward pass, compute loss, call backward, step the optimizer. But each of those four steps has requirements that aren't obvious from the high-level description — and violating any of them produces bugs that are silent, slow, or both. This post builds a complete, production-grade training loop from first principles and explains every line.

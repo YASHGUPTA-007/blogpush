@@ -8,7 +8,7 @@ excerpt: >-
   to debug downstream.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: LangChain
 tags:
   - LangChain
   - RAG
@@ -31,7 +31,9 @@ tools:
   - Python
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_4.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/langchain/langchain_4.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Every RAG pipeline starts with loading documents and splitting them into chunks. Engineers rush through this step and then spend days debugging why retrieval returns irrelevant results — the real cause is usually chunk boundaries that split mid-sentence, chunks too large to fit in context, or document loaders that silently drop formatting. This post covers the loaders and splitters you'll actually use in production, and the decisions that make the difference between a RAG pipeline that works and one that doesn't.

@@ -8,7 +8,7 @@ excerpt: >-
   Here's both.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: Research
 tags:
   - LoRA
   - PEFT
@@ -33,7 +33,9 @@ tools:
   - PEFT
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_5.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/research/research_5.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Full fine-tuning a 7B parameter model requires keeping all 7 billion gradients in memory simultaneously — typically 28+ GB just for the gradients, plus optimizer states. For Adam, that's 3× the model size: ~84 GB total. Few organizations have this hardware. LoRA (Low-Rank Adaptation) solves this by making a key observation: **the updates to weight matrices during fine-tuning have low intrinsic rank**. Instead of training the full weight matrix, train two small matrices whose product approximates the update. Rank-8 LoRA on a 4096×4096 attention projection needs `4096×8 + 8×4096 = 65,536` parameters instead of `4096×4096 = 16,777,216` — a 256× reduction.

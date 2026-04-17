@@ -8,7 +8,7 @@ excerpt: >-
   debugging.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: PyTorch
 tags:
   - PyTorch
   - Tensors
@@ -30,7 +30,9 @@ tools:
   - PyTorch
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_1.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/pytorch/pytorch_1.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 Tensors are the backbone of PyTorch. Get them wrong and you'll waste hours debugging device mismatches, silent dtype promotions, and memory layout errors that only surface at batch boundaries. This post strips away the abstraction and shows you exactly how tensors work under the hood — not because it's academically interesting, but because this knowledge directly translates to fewer bugs and faster models.

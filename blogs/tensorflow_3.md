@@ -8,7 +8,7 @@ excerpt: >-
   dynamics that Keras callbacks can't express.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: TensorFlow
 tags:
   - TensorFlow
   - GradientTape
@@ -31,7 +31,9 @@ tools:
   - Keras
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_3.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_3.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 `model.fit()` is the right tool for 80% of training jobs. But it is an abstraction — and abstractions have edges. When you need to clip gradients per-layer instead of globally, apply loss-based curriculum learning, implement gradient penalty (WGAN-GP), or mix supervised and self-supervised objectives in a single step, you've hit that edge. `tf.GradientTape` is the escape hatch: it records operations so you can differentiate through them, giving you a forward pass and backward pass you control entirely.

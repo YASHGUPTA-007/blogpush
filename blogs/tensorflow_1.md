@@ -7,7 +7,7 @@ excerpt: >-
   still power production deployments. Understand when and how graphs take over.
 author: Soham Sharma
 authorName: Soham Sharma
-category: AI
+category: TensorFlow
 tags:
   - TensorFlow
   - tf.function
@@ -30,7 +30,9 @@ tools:
   - Python
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_1.ipynb)
+<a href="https://colab.research.google.com/github/YASHGUPTA-007/blogpush/blob/main/notebooks/tensorflow/tensorflow_1.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height:28px;margin-bottom:1rem;" /></a>
+
+
 
 
 TensorFlow 1.x was notoriously hard to debug. You built a static computation graph, compiled it, then ran it in a `Session` — and if something went wrong, you got a cryptic error with no Python stack trace pointing to your actual code. TensorFlow 2.x fixed this by making eager execution the default. But here's the part most tutorials skip: eager execution is for development. In production, `tf.function` re-introduces the static graph — and understanding how that transition works is what separates a model that runs correctly from one that produces subtle bugs at deploy time.
