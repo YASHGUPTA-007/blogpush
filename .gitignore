@@ -18,8 +18,9 @@ yarn-error.log*
 .DS_Store
 
 # Blog source folders (managed externally)
-pytorch/
-langchain/
-tensorflow/
-research/
+# Leading / anchors to repo root — prevents matching notebooks/pytorch/ etc.
+/pytorch/
+/langchain/
+/tensorflow/
+/research/
 
