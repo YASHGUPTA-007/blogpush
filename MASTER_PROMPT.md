@@ -55,6 +55,8 @@ Field rules:
 - featuredImage (string, REQUIRED) — Real Unsplash URL. Never empty, never placeholder.
 - colab_notebook (string) — Filled automatically by CI. Leave empty when generating.
   Format: https://colab.research.google.com/github/OWNER/REPO/blob/main/notebooks/CATEGORY/FILENAME.ipynb
+  Firebase mapping: stored as `notebookLink` in Firestore. When non-empty, an "Open Notebook" button
+  appears in the blog sidebar above the Table of Contents.
 - difficulty    (string) — "beginner" | "intermediate" | "advanced" (see difficulty arc).
 - series_id / series_slug / series_title — fill if post belongs to a series.
 
@@ -73,9 +75,9 @@ HOW IT WORKS (automated — you do not need to generate the .ipynb):
    b. Builds a .ipynb notebook (Jupyter nbformat 4.4)
    c. Stores the notebook in: notebooks/CATEGORY/FILENAME.ipynb
       (same repo, same level as blogs/, pytorch/, langchain/, etc.)
-   d. Injects the Colab badge + link below the frontmatter:
-      [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](COLAB_URL)
-   e. Publishes the updated .md to Firestore
+   d. Fills colab_notebook in frontmatter with the Colab URL, then publishes
+      to Firestore as `notebookLink`. The blog frontend renders a dedicated
+      "Open Notebook" button in the sidebar (no inline badge needed in the .md).
 
 WHAT YOU MUST DO:
 - Write complete, runnable Python code blocks (no pseudo-code, no ellipsis shortcuts)
@@ -487,7 +489,7 @@ SECTION N — QUALITY CHECKLIST (verify before each file)
 FRONTMATTER
 ✅ author: "Soham Sharma" — mandatory, no exceptions
 ✅ authorName: "Soham Sharma" — mandatory, must be present
-✅ colab_notebook: "" — present and empty (CI fills it)
+✅ colab_notebook: "" — present and empty (CI fills it → stored as notebookLink in Firestore → renders as "Open Notebook" button in blog sidebar)
 ✅ featuredImage: real Unsplash URL, not a placeholder
 
 STRUCTURE
